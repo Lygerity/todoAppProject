@@ -4,3 +4,4 @@
 4 - Calendrier regroupant toutes les Todos (COMPLIQUE?)
 5 - Catégoriser les Todos par date -> "Today", "Tommorrow", "This week", "This Month"
 6 - Ajouter des priorités aux Todos
+7 - Jauge de complétion de toutes les Todos
