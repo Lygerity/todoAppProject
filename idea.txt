@@ -4,3 +4,12 @@
 4 - Calendrier regroupant toutes les Todos (COMPLIQUE?)
 5 - Catégoriser les Todos par date -> "Today", "Tommorrow", "This week", "This Month"
 6 - Ajouter des priorités aux Todos
+
+
+- vue liste de tâches par jour
+
+- possibilité de repousser au lendemain + compteur nb de fois qu’on repousse
+
+- modifier l’état des tâches (to do/ in progress / done)
+
+- système de gratification si toutes les tâches finies (trophée ou autre)
