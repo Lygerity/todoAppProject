@@ -5,3 +5,4 @@
 5 - Catégoriser les Todos par date -> "Today", "Tommorrow", "This week", "This Month"
 6 - Ajouter des priorités aux Todos
 7 - Jauge de complétion de toutes les Todos
+8 - Associer des collaborateurs pour les Todos (par exemple Louison et Maxime s'occupent d'aller faire le ménage)
