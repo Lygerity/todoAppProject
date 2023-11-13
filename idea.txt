@@ -1,0 +1,6 @@
+1 - Valider chaque Todo
+2 - Catégoriser les Todos (Sport, Travail, Loisir, Meetings, Vacances..)
+3 - Définir une date pour réaliser les Todos
+4 - Calendrier regroupant toutes les Todos (COMPLIQUE?)
+5 - Catégoriser les Todos par date -> "Today", "Tommorrow", "This week", "This Month"
+6 - Ajouter des priorités aux Todos
