@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from '../assets/stylesheets/images/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useState } from 'react';
 import '../assets/stylesheets/components/App.css'
+import TaskForm from "./taskForm/TaskForm";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [tasks, setTasks] = useState<string[]>([]);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const addTask = (task: string) => {
+        setTasks([...tasks, task]);
+    };
+
+    const deleteTask = (index: number) => {
+        const newTasks = [...tasks];
+        newTasks.splice(index, 1);
+        setTasks(newTasks);
+    };
+
+    return (
+        <div className="App">
+            <h1>React To-Do App</h1>
+            <TaskForm onAddTask={addTask} />
+            <ul>
+                {tasks.map((task, index) => (
+                    <li key={index}>
+                        {task}
+                        <button onClick={() => deleteTask(index)}>Delete</button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
 export default App
