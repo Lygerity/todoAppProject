@@ -8,3 +8,5 @@
 8 - Associer des collaborateurs pour les Todos (par exemple Louison et Maxime s'occupent d'aller faire le ménage)
 9 - possibilité de repousser au lendemain + compteur nb de fois qu’on repousse
 10 - système de gratification si toutes les tâches finies (trophée ou autre)
+11 - possibilité ajout photo à une tâche
+12 - possibilité de synchroniser avec google agenda ou similaire
