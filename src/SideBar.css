@@ -13,7 +13,7 @@
 
 .visible {
     display: inherit;
-    width: 300px;
+    width: 350px;
 }
 /* Individual item */
 .itemMenu {
@@ -39,6 +39,49 @@
 
 
 
+/*----------Calendar----------*/
+/*-- boutons de navigation --*/
+.react-calendar__navigation button {
+    color: black;
+    min-width: 10px;
+    background-color: rgb(43, 165, 98);
+    font-size: 16px;
+    margin-top: 8px;
+   }
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+    background-color:rgb(37, 147, 86);
+    border-width: 0;
+}
 
 
+/*-- boutons des jours --*/
+.react-calendar__tile{
+    background-color: rgb(43, 165, 98);
+    text-align: center;
+    border-width: 0;
+}
 
+
+.react-calendar__tile:enabled:hover {
+    background-color:rgb(37, 147, 86);
+    color: #ffffff;
+
+    border-width: 0;
+}
+.react-calendar__tile:enabled:focus{
+    border-width: 1px;
+    border-color: azure;
+    transition: 0.1s;
+}
+/*--- jours de la semaine ---*/
+abbr[title] {
+    text-decoration: none;
+    width: 100%;
+   }
+
+.react-calendar__month-view__weekdays__weekday,
+.react-calendar__month-view__weekdays__weekday--weekend{
+    text-align: center;
+}

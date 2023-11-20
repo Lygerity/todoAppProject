@@ -23,6 +23,7 @@ const SideBar = () => {
     const [classButton, setClassButton] = useState("button visible")
     const [classMenu, setClassMenu] = useState("menu hidden")
     const [classSideBar, setSideBar] = useState("sidebar")
+    const [classSCalendar, setcalendar] = useState("hidden")
     
 
 
@@ -31,11 +32,13 @@ const SideBar = () => {
         if(!isClicked) {
             setClassButton("burger-bar clicked button")
             setClassMenu("menu visible")
+            setcalendar("visible")
             setSideBar("classSideBar visible classMenu")
         }
         else {
             setClassButton("burger-bar unclicked button")
             setClassMenu("menu hidden")
+            setcalendar("hidden")
             setSideBar("classSideBar")
         }
         setIsClicked(!isClicked)
@@ -49,8 +52,8 @@ const SideBar = () => {
                     <Button isClicked={isClicked} onClick={updateMenu} label={"button"}/>
                     </div>
 
-                    <div className='calendar'>
-                        <Calendar/>
+                    <div className={classSCalendar}>
+                        <Calendar onClickDay={()=>console.log('jour')}/>
                     </div>
 
                     <div className={classMenu}>
