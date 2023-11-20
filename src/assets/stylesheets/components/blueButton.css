@@ -1,0 +1,15 @@
+/* BlueButton.css */
+
+.button-blue {
+    background-color: #3498db; /* Blue color */
+    color: #ffffff; /* White text color */
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    outline: none; /* Remove default outline */
+}
+
+.button-blue:hover {
+    background-color: #2980b9; /* Darker blue color on hover */
+}

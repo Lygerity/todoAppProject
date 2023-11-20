@@ -40,3 +40,45 @@
 .read-the-docs {
   color: #888;
 }
+
+/* App.css */
+
+.App {
+  background-color: #ffffff; /* White background */
+  color: #333333; /* Text color */
+  padding: 20px; /* Add padding for better readability */
+}
+
+h1 {
+  color: #3498db; /* Blue color for the heading */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #3498db; /* Blue border around each task */
+  border-radius: 5px; /* Add rounded corners */
+  background-color: #ecf0f1; /* Light blue background for each task */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: #e74c3c; /* Red color for the delete button */
+  color: #ffffff; /* White text color for the delete button */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: #c0392b; /* Darker red color on hover */
+}
+
