@@ -1,5 +1,44 @@
-button {
-    padding-top: 0px;
-    margin-top: 20px;
-    margin-left: 20px;
+.classMenu{
+    /* background-color: red; */
+    background-color: red;
+    height: 100%;
+    position: fixed;
 }
+
+/* ------------- sliding menu ------------------ */
+.hidden {
+    display: none;
+    /* transition: 0.5s; */
+}
+
+.visible {
+    display: inherit;
+    width: 300px;
+}
+/* Individual item */
+.itemMenu {
+  display: flow-root;
+
+  color: #ffffffac;
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.2s;
+  line-break: auto;
+}
+.item1{
+    margin-top: 40px;
+}
+
+.itemMenu:hover {
+  color: #ffffff;
+  /* font-size: 1.2em; */
+  transition: 0.2s;
+  /* margin-bottom: 20px; */
+}
+
+
+
+
+
+

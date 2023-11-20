@@ -1,20 +1,6 @@
-button {
-    padding-top: 0px;
-    margin-top: 20px;
-    margin-left: 20px;
+.button {
+    margin-top: 50px;
+    padding-left: 10px;
+    /* background-color: aqua; */
+
 }
-
-menu{
-    background-color: red;
-}
-
-/* ------------- sliding menu ------------------ */
-.hidden {
-    display: none;
-}
-
-.visible {
-    display: inherit;
-}
-
-
