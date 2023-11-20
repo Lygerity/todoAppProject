@@ -21,4 +21,16 @@ vue des tâches à réaliser dans la journée
 vue des tâches à faire dans la semaines
 
 
+émojies pour catégoriser (malette pour le travail) - pre set 10 émojies par défaut
+animation -> lottie
+responsive sidebar
+jauge de complétion -> bonne idée
+mobix -> backend, pour theme de l'app dark / light -> permet actualisation en local et pas besoin de push dans database
+firebase -> realtime database
+synchro google agenda
+sorti3 -> to do app
+ia -> type chatgpt -> complétion ou proposition d'idées
+gamification
+
+calendrier dans la sidebar
 

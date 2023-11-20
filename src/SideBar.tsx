@@ -13,6 +13,7 @@ transition pour déploiement du menu
 import { useState } from 'react';
 import Button from './Button';
 import './SideBar.css'
+import Calendar from 'react-calendar';
 // import { useState } from "react";
 
 
@@ -46,6 +47,10 @@ const SideBar = () => {
                 <nav className={classSideBar}>
                     <div className={classButton}>
                     <Button isClicked={isClicked} onClick={updateMenu} label={"button"}/>
+                    </div>
+
+                    <div className='calendar'>
+                        <Calendar/>
                     </div>
 
                     <div className={classMenu}>
