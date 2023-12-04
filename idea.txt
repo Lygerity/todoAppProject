@@ -20,6 +20,6 @@ formulaire création tâche - kevin
 menu en side bar - leo
 vue des tâches à réaliser dans la journée
 vue des tâches à faire dans la semaines
-
+vue des tâches terminées
 
 
