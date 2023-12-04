@@ -2,8 +2,7 @@ import {FunctionComponent, PropsWithChildren} from "react";
 import Task from "./task/Task.tsx";
 import "../../assets/stylesheets/components/Tasks.css"
 
-type Props = {
-} & PropsWithChildren;
+type Props = NonNullable<unknown> & PropsWithChildren;
 
 type Task = {
     id: number;
@@ -12,7 +11,7 @@ type Task = {
     completed: boolean;
 }
 
-const Tasks: FunctionComponent<Props> = (props: Props) => {
+const Tasks: FunctionComponent<Props> = () => {
 const tasks:Task[] = [
         {
             id: 1,

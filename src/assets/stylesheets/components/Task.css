@@ -11,6 +11,10 @@
     border-radius: 15px;
 }
 
+.task__completed {
+    cursor: pointer;
+}
+
 .task__date {
     display: flex;
     flex-direction: row;
