@@ -37,7 +37,11 @@
   /* margin-bottom: 20px; */
 }
 
-
+.react-calendar__navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
 
 /*----------Calendar----------*/
 /*-- boutons de navigation --*/

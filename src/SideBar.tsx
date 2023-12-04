@@ -44,7 +44,10 @@ const SideBar = () => {
         setIsClicked(!isClicked)
     }
 
-
+    const handleDayClick = (date: any) => {
+        console.log('Jour sélectionné:', date + typeof date );        
+      };
+    
         return(
             <div>
                 <nav className={classSideBar}>
@@ -53,7 +56,7 @@ const SideBar = () => {
                     </div>
 
                     <div className={classSCalendar}>
-                        <Calendar onClickDay={()=>console.log('jour')}/>
+                        <Calendar onClickDay={handleDayClick}/> {/* sur un click accéder à une page task day */}
                     </div>
 
                     <div className={classMenu}>
