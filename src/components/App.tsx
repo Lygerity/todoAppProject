@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from '../assets/stylesheets/images/react.svg'
 import viteLogo from '/vite.svg'
 import '../assets/stylesheets/components/App.css'
-import Task from "./tasks/task/Task.tsx";
+import Tasks from "./tasks/Tasks.tsx";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,8 +29,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-          <Task id={1} name={"Aller chercher le pain"} date={new Date()} completed={true}/>
-        <Task id={1} name={"Aller chercher le paing"} date={new Date()} completed={false}/>
+          <Tasks/>
     </>
   )
 }
