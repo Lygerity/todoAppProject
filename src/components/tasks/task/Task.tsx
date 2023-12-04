@@ -1,5 +1,7 @@
 import {FunctionComponent, PropsWithChildren} from "react";
 import {TaskAlt, RemoveDone} from '@mui/icons-material';
+import "../../../assets/stylesheets/components/Task.css"
+
 type Props = {
     id: number;
     name: string;
@@ -8,12 +10,13 @@ type Props = {
 } & PropsWithChildren;
 
 const Task:FunctionComponent<Props> = (props: Props) => {
-
+    const minutes:string | number = props.date.getMinutes()<10 ? "0"+props.date.getMinutes() : props.date.getMinutes()
     return(
         <div className={"task"}>
             <h3 className={"task__name"}>{props.name}</h3>
             <div className={"task__date"}>
-                <p>{props.date.getDate()}/{props.date.getMonth()}/{props.date.getFullYear()}</p>
+                <p>{props.date.getDate()}/{props.date.getMonth()+1}/{props.date.getFullYear()}</p>
+                <p>{props.date.getHours()}h{minutes}</p>
             </div>
             <div className={"task__completed"}>
                 {props.completed ? <TaskAlt style={{color: 'lightgreen'}}/> : <RemoveDone style={{color: 'indianred'}}/>}
