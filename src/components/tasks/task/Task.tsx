@@ -1,6 +1,7 @@
 import {FunctionComponent, PropsWithChildren, useState} from "react";
 import {TaskAlt, RemoveDone} from '@mui/icons-material';
 import "../../../assets/stylesheets/components/Task.css"
+import firebase from "../../../firebase/firebase.tsx";
 
 type Props = {
     id: string;
@@ -14,7 +15,10 @@ const Task:FunctionComponent<Props> = (props: Props) => {
     const [status, setStatus] =useState(props.completed)
 
     const handleClick = () =>{
-        setStatus(!status)
+        const tasksRef = firebase.firestore().doc('tasks/'+props.id);
+        tasksRef.update({
+            completed: !status
+        }).then(() => setStatus(!status))
     }
 
     const minutes:string | number = props.date.getMinutes()<10 ? "0"+props.date.getMinutes() : props.date.getMinutes()
