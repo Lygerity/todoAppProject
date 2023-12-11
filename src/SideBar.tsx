@@ -14,7 +14,7 @@ import { useState } from 'react';
 import Button from './Button';
 import './SideBar.css'
 import Calendar from 'react-calendar';
-// import { useState } from "react";
+import {Link, useNavigate} from 'react-router-dom';
 
 
 const SideBar = () => {
@@ -23,9 +23,9 @@ const SideBar = () => {
     const [classButton, setClassButton] = useState("button visible")
     const [classMenu, setClassMenu] = useState("menu hidden")
     const [classSideBar, setSideBar] = useState("sidebar")
-    const [classSCalendar, setcalendar] = useState("hidden")
+    const [classCalendar, setcalendar] = useState("hidden")
     
-
+    const navigate = useNavigate();
 
    
     const updateMenu = () => {
@@ -45,7 +45,9 @@ const SideBar = () => {
     }
 
     const handleDayClick = (date: any) => {
-        console.log('Jour sélectionné:', date + typeof date );        
+        console.log('Jour sélectionné:', date + typeof date );  
+
+        navigate(`/taskpage/${date}`); // modif avec mobx
       };
     
         return(
@@ -55,23 +57,25 @@ const SideBar = () => {
                     <Button isClicked={isClicked} onClick={updateMenu} label={"button"}/>
                     </div>
 
-                    <div className={classSCalendar}>
+                    <div className={classCalendar}>
                         <Calendar onClickDay={handleDayClick}/> {/* sur un click accéder à une page task day */}
                     </div>
 
                     <div className={classMenu}>
                         
-                        <a className='itemMenu item1' href='/'>item1</a>
+                        <a className='itemMenu item1' href='/'>Main Page</a>
                         
-                        <a className='itemMenu' href='/'>item2</a>
+                        {/* A ajuster en fonction des vues dev */}
+
+                        <Link className='itemMenu' to='/'>vue semaine</Link>
                         
-                        <a className='itemMenu' href='/'>item3</a>
+                        <Link className='itemMenu' to='/'>vue mois</Link>
 
-                        <a className='itemMenu' href='/'>item4</a>
+                        <Link className='itemMenu' to='/'>??</Link>
 
-                        <a className='itemMenu' href='/'>item5</a>
+                        <Link className='itemMenu' to='/'>??</Link>
 
-                        <a className='itemMenu' href='/'>item6</a>
+                        <Link className='itemMenu' to='/'>??</Link>
 
                     </div>
                 </nav>

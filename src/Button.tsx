@@ -1,9 +1,8 @@
-// import { useState } from "react"
 import './Button.css'
 import React, { useRef, useState } from 'react';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import { FunctionComponent, PropsWithChildren } from "react";
-import animationData from './animation/Animation-1701680646366.json'; // Remplacez ceci par le chemin de votre animation JSON
+import animationData from './animation/Animation-1701680646366.json'; 
 
 type Props = {
     label: String;
@@ -19,10 +18,9 @@ const Button: FunctionComponent<Props> = (props: Props)=>{
     const animationRef = React.useRef<LottieRefCurrentProps>(null);
 
     const handleClick = () => {
-        // if(typeof props != undefined){
-        //     console.log("on est laaaa");
-        //     props.onClick;  
-        // }
+        if(props.onClick){
+            props.onClick();  
+        }
         if (animationRef.current) {
             const targetFrame = currentFrame === 1 ? 69 : 1;
 
@@ -33,7 +31,7 @@ const Button: FunctionComponent<Props> = (props: Props)=>{
             animationRef.current.playSegments([currentFrame, targetFrame + 1], true);
             setTimeout(() => {
                 if(animationRef.current){animationRef.current.playSegments([targetFrame, targetFrame + 1], true);}
-            }, 900); // Ajustez la durée de transition selon vos besoins
+            }, 450); // Ajustez la durée de transition selon vos besoins, ici 450 Attention à ajuster avec "fr":140 le frame rate
 
             setCurrentFrame(targetFrame);
         }
@@ -42,21 +40,22 @@ const Button: FunctionComponent<Props> = (props: Props)=>{
     const handleComplete = () => {
         if (animationRef.current) {
             setIsPlaying(true);
-            animationRef.current.setDirection(1); // Assurez-vous que la direction est vers l'avant
+            animationRef.current.setDirection(1); 
             animationRef.current.play();
         }
     };
     return(
         <>
         <div className="button" >
-            {/* <button onClick={props.onClick}>button</button> */}
             <Lottie
                 lottieRef={animationRef}
                 animationData={animationData}
                 loop={true}
                 autoplay={isPlaying}
-                onClick={handleClick} // && props.onClick}
+                onClick={handleClick}
                 onComplete={handleComplete}
+                style={{width: 50}}
+                
             />
            
         </div>
