@@ -1,5 +1,5 @@
 1 - Valider chaque Todo
-2 - Catégoriser les Todos (Sport, Travail, Loisir, Meetings, Vacances..)
+2 - Catégoriser les Todos (Sport, Travail, Loisir, Meetings, Vacances..) emoji
 3 - Définir une date pour réaliser les Todos
 4 - Calendrier regroupant toutes les Todos (COMPLIQUE?) + vue avec liste de tâches pour la journée
 5 - Catégoriser les Todos par date -> "Today", "Tommorrow", "This week", "This Month"
@@ -10,16 +10,17 @@
 10 - système de gratification si toutes les tâches finies (trophée ou autre)
 11 - possibilité ajout photo à une tâche
 12 - possibilité de synchroniser avec google agenda ou similaire
+13- Integrer une ia qui propose des tâches en fonction de la date et de la catégorie
 
-
+LOTTIE FOR ANIMATIONS
 
 tasks :
 
-formulaire création tâche
-menu en side bar
+formulaire création tâche - kevin
+menu en side bar - leo
 vue des tâches à réaliser dans la journée
 vue des tâches à faire dans la semaines
-
+vue des tâches terminées
 
 émojies pour catégoriser (malette pour le travail) - pre set 10 émojies par défaut
 animation -> lottie
