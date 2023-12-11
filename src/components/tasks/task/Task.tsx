@@ -3,7 +3,7 @@ import {TaskAlt, RemoveDone} from '@mui/icons-material';
 import "../../../assets/stylesheets/components/Task.css"
 
 type Props = {
-    id: number;
+    id: string;
     name: string;
     date: Date;
     completed: boolean;
