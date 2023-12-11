@@ -1,32 +1,32 @@
-/* TaskForm.css */
-
-div {
-    margin-bottom: 20px;
+.task-form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 10px;
 }
+
 
 input,
 select {
     width: 100%;
     padding: 8px;
+    margin-top: 5px;
     margin-bottom: 10px;
     box-sizing: border-box;
 }
 
-button {
-    background-color: #3498db; /* Blue color for the button */
-    color: #ffffff; /* White text color for the button */
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
+.datePicker {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
-button:hover {
-    background-color: #2980b9; /* Darker blue color on hover */
-}

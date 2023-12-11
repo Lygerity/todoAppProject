@@ -1,7 +1,7 @@
 /* BlueButton.css */
 
 .button-blue {
-    background-color: #3498db; /* Blue color */
+    background-color: #00B4D8; /* Blue color */
     color: #ffffff; /* White text color */
     padding: 10px;
     border-radius: 5px;
@@ -11,5 +11,5 @@
 }
 
 .button-blue:hover {
-    background-color: #2980b9; /* Darker blue color on hover */
+    background-color: #0077B6; /* Darker blue color on hover */
 }
