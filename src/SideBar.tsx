@@ -12,7 +12,7 @@ transition pour déploiement du menu
 
 import { useState } from 'react';
 import Button from './Button';
-import './SideBar.css'
+import './SideBar.css';
 import Calendar from 'react-calendar';
 import {Link, useNavigate} from 'react-router-dom';
 
@@ -47,7 +47,7 @@ const SideBar = () => {
     const handleDayClick = (date: any) => {
         console.log('Jour sélectionné:', date + typeof date );  
 
-        navigate(`/taskpage/${date}`); // modif avec mobx
+        navigate(`/taskpage/${date}`); // modif avec mobx pour pas avoir la date dans l'url
       };
     
         return(
