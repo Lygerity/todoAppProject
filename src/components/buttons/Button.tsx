@@ -2,7 +2,7 @@ import './Button.css'
 import React, { useRef, useState } from 'react';
 import Lottie, { LottieRefCurrentProps } from 'lottie-react';
 import { FunctionComponent, PropsWithChildren } from "react";
-import animationData from './animation/Animation-1701680646366.json'; 
+import animationData from '../../animation/Animation-1701680646366.json'; 
 
 type Props = {
     label: String;

@@ -1,5 +1,5 @@
 import SideBar from './SideBar';
-import "./TaskPage.css";
+import "../assets/stylesheets/components/TaskPage.css";
 import { useParams } from 'react-router-dom';
 
 // type Props = {

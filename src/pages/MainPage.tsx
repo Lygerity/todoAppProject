@@ -1,7 +1,8 @@
 import SideBar from './SideBar';
-import "./MainPage.css";
-import TaskForm from './components/taskForm/TaskForm';
-import Tasks from './components/tasks/Tasks';
+import "../assets/stylesheets/components/MainPage.css";
+
+import TaskForm from '../components/taskForm/TaskForm';
+import Tasks from '../components/tasks/Tasks';
 import { useState } from 'react';
 
 function MainPage(): JSX.Element{
@@ -14,7 +15,7 @@ function MainPage(): JSX.Element{
         <div className='mainPageContent'>
             
             <SideBar/>                
-            <h1>Main Page</h1>
+            
             <h1>React To-Do App</h1>
             <TaskForm onAddTask={addTask}/>
             <Tasks/>

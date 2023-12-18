@@ -11,8 +11,10 @@ transition pour déploiement du menu
 */
 
 import { useState } from 'react';
-import Button from './Button';
-import './SideBar.css';
+import Button from '../components/buttons/Button';
+// import './SideBar.css';
+import "../assets/stylesheets/components/SideBar.css";
+
 import Calendar from 'react-calendar';
 import {Link, useNavigate} from 'react-router-dom';
 
