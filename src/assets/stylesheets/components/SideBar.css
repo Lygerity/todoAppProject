@@ -77,9 +77,12 @@ nav{
 .react-calendar__tile:active,
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
-    transition: 0.5s;
+    transition: 0.2s;
     background-color:#0077B6;
     border-width: 0;
+    cursor: pointer;
+    color: white;
+
 }
 
 
@@ -89,13 +92,18 @@ nav{
     background-color:#00B4D8;
     text-align: center;
     border-width: 0;
+    padding: 10px;
+    border-radius: 8%;
+    font-size: 1em;
+    /* color: white; */
 }
-
+/* react-calendar__tile react-calendar__month-view__days__day */
 
 .react-calendar__tile:enabled:hover {
     transition: 0.2s;
     background-color:#0077B6;
     color: #ffffff;
+    cursor: pointer;
 
     border-width: 0;
 }
