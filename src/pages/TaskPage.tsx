@@ -1,24 +1,21 @@
+// TaskPage.tsx
 import SideBar from './SideBar';
 import "../assets/stylesheets/components/TaskPage.css";
-import { useParams } from 'react-router-dom';
-
-// type Props = {
-//     // data: String;
-//     data: Date;
-// } & PropsWithChildren;
+import { observer } from 'mobx-react-lite';
+import { useDateStore } from '../store/useDateStore';
 
 const TaskPage = () => {
-    const { data } = useParams();
+  const dateStore = useDateStore();
 
+  console.log('Selected Date:', dateStore.selectedDate);
 
-    return (
-        <div className='mainContentTask'>
-            
-            <SideBar/>                
-            <h1>Task Page</h1>
-            <p>{data?.toString() || "no date"}</p>
-        </div>
-    )
+  return (
+    <div className='mainContentTask'>
+      <SideBar />
+      <h1>Task Page</h1>
+      <p>{dateStore.selectedDate ? dateStore.selectedDate.toLocaleString() : "no date"}</p>
+    </div>
+  );
 }
 
-export default TaskPage;
+export default observer(TaskPage);
