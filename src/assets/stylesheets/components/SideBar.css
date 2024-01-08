@@ -1,16 +1,18 @@
-*{
+* {
     margin-top: 0px;
     margin-left: 0px;
 }
+
 .classSideBar,
-nav{
+nav {
     position: fixed;
     top: 0;
     left: 0;
 
 }
-.classMenu{
-    background-color:#00B4D8;
+
+.classMenu {
+    background-color: #00B4D8;
     height: 100%;
     position: fixed;
 }
@@ -28,61 +30,65 @@ nav{
     width: 350px;
 
 }
+
 .itemMenu {
 
-  display: flow-root;
+    display: flow-root;
 
-  color: #ffffffac;
-  margin-bottom: 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: color 0.2s;
-  line-break: auto;
+    color: #ffffffac;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.2s;
+    line-break: auto;
 }
-.item1{
+
+.item1 {
     margin-top: 40px;
 }
 
 .itemMenu:hover {
-  color: #ffffff;
-  transition: 0.2s;
+    color: #ffffff;
+    transition: 0.2s;
 }
 
 
 /*----------Calendar----------*/
 /*-- boutons de navigation --*/
 
-.react-calendar__navigation{
+.react-calendar__navigation {
 
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
+
 .burger-bar {
     cursor: pointer;
     width: 50px;
 }
 
 .react-calendar__navigation button {
-    
+
     color: black;
     min-width: 10px;
-    background-color:#00B4D8;
+    background-color: #00B4D8;
     font-size: 16px;
     margin-top: 8px;
-    
+
     border-radius: 8px;
     border: 0px solid transparent;
     padding: 0.6em 1.2em;
     font-size: 1em;
     font-weight: 500;
 
-   }
+}
+
 .react-calendar__tile:active,
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
     transition: 0.2s;
-    background-color:#0077B6;
+    background-color: #0077B6;
     border-width: 0;
     cursor: pointer;
     color: white;
@@ -91,9 +97,9 @@ nav{
 
 
 /*-- boutons des jours --*/
-.react-calendar__tile{
+.react-calendar__tile {
 
-    background-color:#00B4D8;
+    background-color: #00B4D8;
     text-align: center;
     border-width: 0;
     padding: 10px;
@@ -104,17 +110,19 @@ nav{
 
 .react-calendar__tile:enabled:hover {
     transition: 0.2s;
-    background-color:#0077B6;
+    background-color: #0077B6;
     color: #ffffff;
     cursor: pointer;
 
     border-width: 0;
 }
-.react-calendar__tile:enabled:focus{
+
+.react-calendar__tile:enabled:focus {
     border-width: 1px;
     border-color: azure;
     transition: 0.1s;
 }
+
 /*--- jours de la semaine ---*/
 abbr[title] {
 
@@ -124,13 +132,13 @@ abbr[title] {
     font-weight: 400;
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
-   
-   }
+
+}
 
 .react-calendar__month-view__weekdays__weekday,
-.react-calendar__month-view__weekdays__weekday--weekend{
+.react-calendar__month-view__weekdays__weekday--weekend {
     text-align: center;
 }
