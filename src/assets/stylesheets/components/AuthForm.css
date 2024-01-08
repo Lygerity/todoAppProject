@@ -71,3 +71,12 @@
         align-items: center;
     }
 }
+
+.auth-form-success {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: #e9ffd9;
+    color: #27632a;
+    text-align: center;
+}

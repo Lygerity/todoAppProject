@@ -14,6 +14,7 @@ const SignUpForm: React.FC = () => {
         username: '',
         password: '',
     });
+    const [signUpSuccess, setSignUpSuccess] = useState<string>("");
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -25,6 +26,7 @@ const SignUpForm: React.FC = () => {
 
     const handleSignUp = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        setSignUpSuccess(""); // Reset any previous success messages
         try {
             const userCredential = await firebase.auth().createUserWithEmailAndPassword(newUser.email, newUser.password);
             const user = userCredential.user;
@@ -33,12 +35,15 @@ const SignUpForm: React.FC = () => {
                 username: newUser.username,
                 email: newUser.email,
             });
-            // Réinitialiser le formulaire ou rediriger l'utilisateur
+            // Set success message
+            setSignUpSuccess("Inscription réussie!");
+            // Clear form
+            setNewUser({ email: '', username: '', password: '' });
         } catch (error) {
             if (error instanceof Error) {
-                console.error('Erreur d inscription:', error.message);
+                console.error('Erreur d\'inscription:', error.message);
             } else {
-                console.error('Erreur d inscription:', error);
+                console.error('Erreur d\'inscription:', error);
             }
         }
     };
@@ -46,6 +51,7 @@ const SignUpForm: React.FC = () => {
     return (
         <div className="auth-form-container">
             <h2 className="auth-form-title">Inscription</h2>
+            {signUpSuccess && <div className="auth-form-success">{signUpSuccess}</div>}
             <form onSubmit={handleSignUp}>
                 <input
                     type="email"
