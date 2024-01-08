@@ -15,7 +15,7 @@ import Button from '../components/buttons/Button';
 // import './SideBar.css';
 import "../assets/stylesheets/components/SideBar.css";
 import { observer } from 'mobx-react-lite';
-import dateStore from '../store/DateStore';
+// import dateStore from '../store/DateStore';
 import Calendar from 'react-calendar';
 import {Link, useNavigate} from 'react-router-dom';
 // import useDateStore from '../store/DateStore';
@@ -60,7 +60,7 @@ const SideBar = () => {
             <div>
                 <nav className={classSideBar}>
                     <div className={classButton}>
-                    <Button isClicked={isClicked} onClick={updateMenu} label={"button"}/>
+                        <Button isClicked={isClicked} onClick={updateMenu} label={"button"}/>
                     </div>
 
                     <div className={classCalendar}>
