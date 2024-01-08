@@ -1,4 +1,3 @@
-// TaskPage.tsx
 import SideBar from './SideBar';
 import "../assets/stylesheets/components/TaskPage.css";
 import { observer } from 'mobx-react-lite';
@@ -19,8 +18,22 @@ type Task = {
 const TaskPage: FunctionComponent<Props> = () => {
   const dateStore = useDateStore();
 
+  const month = [
+                  "janvier",
+                  "février",
+                  "mars",
+                  "avril",
+                  "mai",
+                  "juin",
+                  "juillet",
+                  "août",
+                  "septembre",
+                  "octobre",
+                  "novembre",
+                  "décembre"
+                ];
+
   console.log('Selected Date:', dateStore.selectedDate);
-// methode to pull every tasks of this date
 
   const [tasks, setTasks] = useState<Task[]>([]);
 
@@ -50,7 +63,7 @@ const TaskPage: FunctionComponent<Props> = () => {
 
       <div>
         <h1>Task Page</h1>
-        <p>{dateStore.selectedDate ? dateStore.selectedDate.getDate()+"/" + dateStore.selectedDate.getMonth() + 1 + "/" + dateStore.selectedDate.getFullYear() : "no date"}</p>
+        <p>{dateStore.selectedDate ? dateStore.selectedDate.getDate() + " " + month[dateStore.selectedDate.getMonth()] + " " + dateStore.selectedDate.getFullYear() : "no date"}</p>
       </div>
 
       <div className={"tasks"}>
