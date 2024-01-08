@@ -14,11 +14,12 @@ import { useState } from 'react';
 import Button from '../components/buttons/Button';
 // import './SideBar.css';
 import "../assets/stylesheets/components/SideBar.css";
-
+import { observer } from 'mobx-react-lite';
+import dateStore from '../store/DateStore';
 import Calendar from 'react-calendar';
 import {Link, useNavigate} from 'react-router-dom';
-
-
+// import useDateStore from '../store/DateStore';
+import { useDateStore } from '../store/useDateStore';
 const SideBar = () => {
 
     const [isClicked, setIsClicked] = useState(false);
@@ -26,10 +27,10 @@ const SideBar = () => {
     const [classMenu, setClassMenu] = useState("menu hidden")
     const [classSideBar, setSideBar] = useState("sidebar")
     const [classCalendar, setcalendar] = useState("hidden")
-    
+    // const { setSelectedDate } = useDateStore();
     const navigate = useNavigate();
 
-   
+    const dateStore = useDateStore();
     const updateMenu = () => {
         if(!isClicked) {
             setClassButton("burger-bar clicked button")
@@ -47,10 +48,13 @@ const SideBar = () => {
     }
 
     const handleDayClick = (date: any) => {
-        console.log('Jour sélectionné:', date + typeof date );  
+        console.log('Jour sélectionné dans sidebar : ', date + typeof date );  
 
-        navigate(`/taskpage/${date}`); // modif avec mobx pour pas avoir la date dans l'url
-      };
+        // navigate(`/taskpage/${date}`); // modif avec mobx pour pas avoir la date dans l'url
+        // dateStore.setSelectedDate(date);  // Utiliser la fonction correctement
+        dateStore.setSelectedDate(date);
+        navigate('/taskpage');
+    };
     
         return(
             <div>
@@ -87,4 +91,4 @@ const SideBar = () => {
 }
 
 
-export default SideBar;
+export default observer(SideBar);

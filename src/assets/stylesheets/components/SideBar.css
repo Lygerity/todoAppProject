@@ -97,7 +97,6 @@ nav{
     font-size: 1em;
     /* color: white; */
 }
-/* react-calendar__tile react-calendar__month-view__days__day */
 
 .react-calendar__tile:enabled:hover {
     transition: 0.2s;
