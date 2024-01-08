@@ -28,15 +28,25 @@ const SignUpForm: React.FC = () => {
         event.preventDefault();
         setSignUpSuccess(""); // Reset any previous success messages
         try {
+            // Crée l'utilisateur avec authentification par email et mot de passe
             const userCredential = await firebase.auth().createUserWithEmailAndPassword(newUser.email, newUser.password);
             const user = userCredential.user;
-            // Stocker les informations supplémentaires dans Firestore
+
+            // Crée le document de l'utilisateur dans la collection 'users'
             await firebase.firestore().collection('users').doc(user.uid).set({
                 username: newUser.username,
                 email: newUser.email,
             });
+
+            // Crée un nouveau collaborateur dans la collection 'collaborators' avec une référence à l'utilisateur
+            await firebase.firestore().collection('collaborators').doc(newUser.username).set({
+                userId: user.uid,  // Stocke l'ID de l'utilisateur pour référence
+                username: newUser.username, // Stocke le nom d'utilisateur directement pour un accès facile
+                // Vous pouvez ajouter d'autres champs ici si nécessaire
+            });
+
             // Set success message
-            setSignUpSuccess("Inscription réussie!");
+            setSignUpSuccess("Inscription réussie. Bienvenue!");
             // Clear form
             setNewUser({ email: '', username: '', password: '' });
         } catch (error) {
@@ -47,6 +57,7 @@ const SignUpForm: React.FC = () => {
             }
         }
     };
+
 
     return (
         <div className="auth-form-container">
