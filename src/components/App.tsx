@@ -14,17 +14,18 @@ function App(): JSX.Element {
         <ThemeStoreProvider>
             <Provider themeStore={themeStore} children={undefined}></Provider>
         <div className="App">
-        <DateStoreProvider>
-            <BrowserRouter>
-            <Provider dateStore={dateStore} children={undefined}></Provider>
-            <Routes>
-              <Route path="/" element={<MainPage/>}/>
-              <Route path="/taskpage" element={<TaskPage/>}/>
-            </Routes>
-          </BrowserRouter>
-        </DateStoreProvider>    
+            <DateStoreProvider>
+                <BrowserRouter>
+                    <Provider dateStore={dateStore}>
+                        <Routes>
+                            <Route path="/" element={<MainPage/>}/>
+                            <Route path="/taskpage" element={<TaskPage/>}/>
+                            <Route path="/login" element={<LoginPage/>}/>
+                        </Routes>
+                    </Provider>
+                </BrowserRouter>
+            </DateStoreProvider>
         </div>
-        </ThemeStoreProvider>
     );
 }
 
