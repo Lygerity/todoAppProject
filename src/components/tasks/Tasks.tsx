@@ -23,7 +23,9 @@ const Tasks: FunctionComponent<Props> = () => {
             snapshot.forEach(doc => {
                 const data = doc.data();
                 data.date = data.date.toDate();
-                tasksData.push({completed: data.completed, date: data.date, name: data.name, id: doc.id, ...data});
+                if(data.date > Date.now()){
+                    tasksData.push({completed: data.completed, date: data.date, name: data.name, id: doc.id, ...data});
+                }
             });
             setTasks(tasksData);
         });
