@@ -1,7 +1,7 @@
 import SideBar from './SideBar';
 import "../assets/stylesheets/components/MainPage.css";
 
-import TaskForm from '../components/taskForm/TaskForm';
+import TaskForm from '../components/forms/TaskForm';
 import Tasks from '../components/tasks/Tasks';
 
 function MainPage(): JSX.Element{
