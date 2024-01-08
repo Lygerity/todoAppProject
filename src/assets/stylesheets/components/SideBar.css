@@ -58,6 +58,10 @@ nav{
     justify-content: center;
     align-items: center; 
 }
+.burger-bar {
+    cursor: pointer;
+    width: 50px;
+}
 
 .react-calendar__navigation button {
     
@@ -72,7 +76,7 @@ nav{
     padding: 0.6em 1.2em;
     font-size: 1em;
     font-weight: 500;
-    cursor: pointer;
+
    }
 .react-calendar__tile:active,
 .react-calendar__navigation button:enabled:hover,
