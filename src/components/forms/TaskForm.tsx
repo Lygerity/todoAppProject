@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Lottie from 'lottie-react';
-import animationData from './animrouge.json'
+import animationData from '../taskForm/animrouge.json'
 import '../../assets/stylesheets/components/taskForm.css';
 import BlueButton from "../buttons/blueButton";
 import DatePicker from 'react-datepicker';

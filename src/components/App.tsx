@@ -7,6 +7,7 @@ import LoginPage from '../pages/LoginPage.tsx';
 import { Provider } from 'mobx-react';
 import dateStore from '../store/DateStore';
 import { DateStoreProvider } from '../store/useDateStore';
+import ViewDailyTasks from '../pages/ViewDailyTasks.tsx';
 
 function App(): JSX.Element {
     return (
@@ -18,6 +19,7 @@ function App(): JSX.Element {
                             <Route path="/" element={<MainPage/>}/>
                             <Route path="/taskpage" element={<TaskPage/>}/>
                             <Route path="/login" element={<LoginPage/>}/>
+                            <Route path="/TodayList" element={<ViewDailyTasks/>}/>
                         </Routes>
                     </Provider>
                 </BrowserRouter>
