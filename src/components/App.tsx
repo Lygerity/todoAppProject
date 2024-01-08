@@ -8,6 +8,7 @@ import dateStore from '../store/DateStore';
 import { DateStoreProvider } from '../store/useDateStore';
 import themeStore from "../store/ThemeStore.tsx";
 import {ThemeStoreProvider} from "../store/useThemeStore.tsx";
+import LoginPage from "../pages/LoginPage.tsx";
 function App(): JSX.Element {
 
     return (
@@ -26,6 +27,7 @@ function App(): JSX.Element {
                 </BrowserRouter>
             </DateStoreProvider>
         </div>
+</ThemeStoreProvider>
     );
 }
 
