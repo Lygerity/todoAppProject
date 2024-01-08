@@ -6,9 +6,13 @@ import TaskPage from '../pages/TaskPage.tsx';
 import { Provider } from 'mobx-react';
 import dateStore from '../store/DateStore';
 import { DateStoreProvider } from '../store/useDateStore';
+import themeStore from "../store/ThemeStore.tsx";
+import {ThemeStoreProvider} from "../store/useThemeStore.tsx";
 function App(): JSX.Element {
 
     return (
+        <ThemeStoreProvider>
+            <Provider themeStore={themeStore} children={undefined}></Provider>
         <div className="App">
         <DateStoreProvider>
             <BrowserRouter>
@@ -20,6 +24,7 @@ function App(): JSX.Element {
           </BrowserRouter>
         </DateStoreProvider>    
         </div>
+        </ThemeStoreProvider>
     );
 }
 

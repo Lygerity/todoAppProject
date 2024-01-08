@@ -3,14 +3,16 @@ import "../assets/stylesheets/components/MainPage.css";
 
 import TaskForm from '../components/taskForm/TaskForm';
 import Tasks from '../components/tasks/Tasks';
+import {useThemeStore} from "../store/useThemeStore.tsx";
 
 function MainPage(): JSX.Element{
+    const themeClass = useThemeStore().isDarkMode ? 'dark-theme' : 'light-theme';
 
     return (
-        <div className='mainPageContent'>
+        <div className={`mainPageContent ${themeClass}`}>
             
             <SideBar/>
-            <h1>React To-Do App</h1>
+            <h1 className={`${themeClass}`}>React To-Do App</h1>
             <TaskForm/>
             <Tasks/>
         </div>
