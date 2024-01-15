@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     margin: 0.5rem 1rem;
     /*padding: 0.5rem 1rem;*/
     border-bottom: 1px solid #ccc;
@@ -15,10 +14,17 @@
     cursor: pointer;
 }
 
+.task__edit {
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+}
+
 .task__date {
     display: flex;
     flex-direction: row;
     padding: 5px;
+    justify-content: center;
 }
 
 p{
