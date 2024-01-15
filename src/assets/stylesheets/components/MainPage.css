@@ -1,4 +1,9 @@
-.mainPageContent h1{
-    color: black;
-    text-align: center;
+.light-theme {
+    background-color: white;
 }
+
+.dark-theme {
+    background-color: black;
+    color: white;
+}
+
