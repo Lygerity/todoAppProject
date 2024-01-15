@@ -73,11 +73,11 @@ const SideBar = () => {
 
         <div className={classMenu}>
           <a className='itemMenu item1' href='/'>Main Page</a>
-          <Link onClick={hideMenu} className='itemMenu' to='/'>vue semaine</Link>
-          <Link onClick={hideMenu} className='itemMenu' to='/'>vue mois</Link>
-          <Link onClick={hideMenu} className='itemMenu' to='/'>??</Link>
           <Link onClick={hideMenu} className='itemMenu' to='/TodayList'>Today List</Link>
-          <Link onClick={hideMenu} className='itemMenu' to='/TodayList'>View collaborateurs</Link>
+          <Link onClick={hideMenu} className='itemMenu' to='/WeekList'>Week List</Link>
+          {/* <Link onClick={hideMenu} className='itemMenu' to='/'>vue mois</Link> */}
+          <Link onClick={hideMenu} className='itemMenu' to='/'>??</Link>
+          <Link onClick={hideMenu} className='itemMenu' to='/'>View collaborateurs ? </Link>
           <Link onClick={hideMenu} className='itemMenu' to='/'>Se déconnecter</Link>
         </div>
       </nav>

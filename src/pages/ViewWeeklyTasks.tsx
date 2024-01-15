@@ -27,14 +27,21 @@ const ViewWeeklyTasks: FunctionComponent<Props> = () => {
                 data.date = data.date.toDate();
                 let today = new Date();
                 // faire un for qui passe sur les 7 jours suivants de today
-                if(
-                  data.date.getDate() === today.getDate() &&
-                  data.date.getMonth() === today.getMonth() &&
-                  data.date.getFullYear() === today.getFullYear()
-                ){
-                  tasksData.push({completed: data.completed, date: data.date, name: data.name, id: doc.id, ...data});
+                let j = 0;
+                for(let i = 0;i<7; i ++){
+                    today.setDate(today.getDate() + j);
+                    if(
+                      data.date.getDate() === today.getDate() &&
+                      data.date.getMonth() === today.getMonth() &&
+                      data.date.getFullYear() === today.getFullYear()
+                    ){
+                      tasksData.push({completed: data.completed, date: data.date, name: data.name, id: doc.id, ...data});
+                    }
+                    j ++;
                 }
+                
             });
+            tasksData.sort((a, b) => a.date.getTime() - b.date.getTime());
             setTasks(tasksData);
         });
         return () => unsubscribe();
@@ -46,9 +53,9 @@ const ViewWeeklyTasks: FunctionComponent<Props> = () => {
             <SideBar />
 
             <div>
-            <h1>Today list</h1>
+            <h1>Week list</h1>
             </div>
-
+            {/* <ViewDailyTasks/> */}
             <div className={"tasks"}>
                 {tasks.map((task, index) => (
                     <Task id={task.id} name={task.name} date={task.date} completed={task.completed} key={index}/>
