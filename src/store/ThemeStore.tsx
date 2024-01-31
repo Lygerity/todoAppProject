@@ -1,14 +1,15 @@
 import {makeAutoObservable} from "mobx";
 
 class ThemeStore {
-    isDarkMode : boolean = false;
-    
+    isDarkMode: boolean = true;
+
     constructor() {
         makeAutoObservable(this);
     }
-    
-    toggleDarkMode(){
+
+    toggleDarkMode() {
         this.isDarkMode = !this.isDarkMode;
     }
 }
+
 export default ThemeStore;

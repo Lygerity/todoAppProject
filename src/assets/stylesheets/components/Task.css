@@ -3,14 +3,19 @@
     flex-direction: column;
     justify-content: space-between;
     margin: 0.5rem 1rem;
+    background-color: #fff;
     /*padding: 0.5rem 1rem;*/
     border-bottom: 1px solid #ccc;
-    background-color: #fff;
     color: #333;
     border-radius: 15px;
 }
 
+.task.dark-theme {
+    background-color: lightgray;
+}
+
 .task__completed {
+
     cursor: pointer;
 }
 
@@ -27,9 +32,10 @@
     justify-content: center;
 }
 
-p{
+p {
     margin: 3px;
 }
-h3{
+
+h3 {
     margin: 3px;
 }

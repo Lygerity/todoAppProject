@@ -5,6 +5,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import firebase from "../../firebase/firebase.tsx";
 
+
 interface Task {
     name: string;
     category: string;
@@ -74,6 +75,7 @@ const TaskForm: React.FC = () => {
             alert('Please fill in all fields before submitting.');
         }
     };
+
 
     return (
         <div className="task-form-container">

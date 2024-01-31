@@ -1,59 +1,23 @@
 import SideBar from './SideBar';
 import "../assets/stylesheets/components/TaskPage.css";
 
-import { FunctionComponent, PropsWithChildren, useEffect, useState } from 'react';
-import firebase from "../firebase/firebase.tsx";
-import Task from '../components/tasks/task/Task';
+import {FunctionComponent, PropsWithChildren} from 'react';
+import {useThemeStore} from '../store/useThemeStore.tsx';
+import Tasks from "../components/tasks/Tasks.tsx";
 
 type Props = NonNullable<unknown> & PropsWithChildren;
 
-type Task = {
-    id: string;
-    name: string;
-    date: Date;
-    completed: boolean;
-}
-
-
 const ViewDailyTasks: FunctionComponent<Props> = () => {
 
-    const [tasks, setTasks] = useState<Task[]>([]);
-  
-    useEffect(() => {
-        const tasksRef = firebase.firestore().collection('tasks');
-        const unsubscribe = tasksRef.onSnapshot(snapshot => {
-            const tasksData: Task[] = [];
-            snapshot.forEach(doc => {
-                const data = doc.data();
-                data.date = data.date.toDate();
-                let today = new Date();
-                if(
-                  data.date.getDate() === today.getDate() &&
-                  data.date.getMonth() === today.getMonth() &&
-                  data.date.getFullYear() === today.getFullYear()
-                ){
-                  tasksData.push({completed: data.completed, date: data.date, name: data.name, id: doc.id, ...data});
-                }
-            });
-            setTasks(tasksData);
-        });
-        return () => unsubscribe();
-    }, []);
+    const themeClass = useThemeStore().isDarkMode ? 'dark-theme' : 'light-theme';
 
-
-    return(
-        <div>
-            <SideBar />
-
+    return (
+        <div className={themeClass}>
+            <SideBar/>
             <div>
-            <h1>Today list</h1>
+                <h1>Today list</h1>
             </div>
-
-            <div className={"tasks"}>
-                {tasks.map((task, index) => (
-                    <Task id={task.id} name={task.name} date={task.date} completed={task.completed} key={index}/>
-                ))}
-            </div>
+            <Tasks full={false} date={new Date()}/>
         </div>
     );
 }
