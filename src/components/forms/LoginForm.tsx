@@ -20,7 +20,7 @@ const LoginForm: React.FC = () => {
         try {
             await firebase.auth().signInWithEmailAndPassword(loginUser.email, loginUser.password);
             // Rediriger vers la page d'accueil après une connexion réussie
-            navigate('/');
+            navigate('/main');
         } catch (error) {
             if (error instanceof Error) {
                 console.error('Erreur de connexion:', error.message);
