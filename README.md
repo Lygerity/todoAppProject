@@ -12,12 +12,11 @@ collaborative todos, along with authentication for personalized access.
 - **Calendar View:** A comprehensive calendar that aggregates all todos, with a daily task list view.
 - **Date-based Categorization:** Todos are automatically categorized into "Today", "Tomorrow", "This Week", and "This
   Month".
-- **Priority Levels:** Assign priority levels to each todo to manage tasks more effectively.
 - **Collaborative Todos:** Collaborate with others on specific todos. For example, assigning Louison and Maxime to take
   care of cleaning.
 - **Authentication:** Includes a login/signup page. Upon registration, a collaborator is added to the project.
 - **Dark mode:** Option to chose between Light and Dark mode.
-- 
+
 ## Getting Started
 
 ### Prerequisites
@@ -36,5 +35,9 @@ project.
 After logging in or signing up, you can begin adding, categorizing, and scheduling your todos. The interface is designed
 to be intuitive, allowing for easy navigation between different views such as the calendar, daily task list, and
 category filters.
+
+### Known Issues
+- **Main Page Reload:** Every time you go back on the home page, the page reloads, which clean up the mobxStore.
+- **DarkMode Button:** The animation is bugged with a lottie file, we didn't had time to found out the issue.
 
 
