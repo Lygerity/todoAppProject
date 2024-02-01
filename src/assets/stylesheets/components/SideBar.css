@@ -1,6 +1,5 @@
 * {
-    margin-top: 0px;
-    margin-left: 0px;
+    margin: 0;
 }
 
 .classSideBar,
@@ -8,7 +7,6 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-
 }
 
 .classMenu {
@@ -29,7 +27,19 @@ nav {
 .visible {
     display: inherit;
     width: 350px;
+    z-index: 1;
+}
 
+.visible.dark-theme {
+    background-color: grey;
+}
+
+.darkModeVisible {
+    cursor: pointer;
+    width: 70px;
+    position: relative;
+    top: -75px;
+    left: 250px;
 }
 
 .itemMenu {
@@ -69,7 +79,21 @@ nav {
     width: 50px;
 }
 
-.react-calendar__navigation button {
+.react-calendar .dark-theme .react-calendar__navigation button {
+    color: black;
+    min-width: 10px;
+    background-color: #35008b;
+    font-size: 16px;
+    margin-top: 8px;
+
+    border-radius: 8px;
+    border: 0px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.react-calendar .react-calendar__navigation button {
 
     color: black;
     min-width: 10px;
@@ -84,6 +108,7 @@ nav {
     font-weight: 500;
 
 }
+
 
 .react-calendar__tile:active,
 .react-calendar__navigation button:enabled:hover,
@@ -142,4 +167,8 @@ abbr[title] {
 .react-calendar__month-view__weekdays__weekday,
 .react-calendar__month-view__weekdays__weekday--weekend {
     text-align: center;
+}
+
+.classSideBar.visible.classMenu.dark-theme {
+    background-color: grey;
 }

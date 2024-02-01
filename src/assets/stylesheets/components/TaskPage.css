@@ -1,7 +1,16 @@
-.mainContentTask h1{
+.mainContentTask .ligth-theme h1 {
     color: black;
     text-align: center;
 }
-.mainContentTask p{
+
+.mainContentTask p {
     text-align: center;
+}
+
+.mainContentTask {
+    min-height: 100vh;
+}
+
+.mainContentTask .dark-theme h1 {
+    color: white;
 }

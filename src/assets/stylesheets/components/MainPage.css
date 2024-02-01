@@ -1,9 +1,10 @@
-.light-theme {
-    background-color: white;
-}
-
 .dark-theme {
-    background-color: black;
+    background-color: #282727;
     color: white;
 }
+
+.mainPageContent.dark-theme {
+    min-height: 100vh;
+}
+
 

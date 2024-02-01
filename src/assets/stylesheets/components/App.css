@@ -1,8 +1,12 @@
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+    max-width: 2500px;
+    margin: 0;
     text-align: center;
+    overflow: hidden;
+}
+
+.App {
+    min-height: 100vh;
 }
 
 .logo {
@@ -41,4 +45,8 @@
 
 .read-the-docs {
     color: #888;
+}
+
+.darkmode {
+    background-color: #282727;
 }
