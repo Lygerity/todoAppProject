@@ -4,8 +4,13 @@ import "../assets/stylesheets/components/MainPage.css";
 import TaskForm from '../components/forms/TaskForm';
 import Tasks from '../components/tasks/Tasks';
 import {useThemeStore} from "../store/useThemeStore.tsx";
+import {observer} from "mobx-react";
+import {FunctionComponent, PropsWithChildren} from "react";
 
-function MainPage(): JSX.Element {
+
+type Props = NonNullable<unknown> & PropsWithChildren;
+
+const MainPage: FunctionComponent<Props> = () =>{
     const themeClass = useThemeStore().isDarkMode ? 'dark-theme' : 'light-theme';
 
     return (
@@ -16,7 +21,7 @@ function MainPage(): JSX.Element {
             <TaskForm/>
             <Tasks full={true}/>
         </div>
-    )
+    );
 }
 
-export default MainPage;
+export default observer(MainPage);

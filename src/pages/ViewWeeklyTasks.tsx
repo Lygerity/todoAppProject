@@ -5,7 +5,7 @@ import {FunctionComponent, PropsWithChildren, useEffect, useState} from 'react';
 import firebase from "../firebase/firebase.tsx";
 import Task from '../components/tasks/task/Task';
 import {useThemeStore} from '../store/useThemeStore.tsx';
-
+import {observer} from "mobx-react";
 
 type Props = NonNullable<unknown> & PropsWithChildren;
 
@@ -57,7 +57,7 @@ const ViewWeeklyTasks: FunctionComponent<Props> = () => {
 
 
     return (
-        <div className={themeClass}>
+        <div className={`mainPageContent ${themeClass}`}>
             <SideBar/>
 
             <div>
@@ -74,4 +74,4 @@ const ViewWeeklyTasks: FunctionComponent<Props> = () => {
 }
 
 
-export default ViewWeeklyTasks;
+export default observer(ViewWeeklyTasks);

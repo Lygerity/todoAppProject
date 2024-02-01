@@ -5,6 +5,10 @@
     overflow: hidden;
 }
 
+.App {
+    min-height: 100vh;
+}
+
 .logo {
     height: 6em;
     padding: 1.5em;

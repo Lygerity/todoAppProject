@@ -25,7 +25,7 @@ function App(): JSX.Element {
                 <BrowserRouter>
                     <Provider dateStore={dateStore}>
                         <Routes>
-                            <Route path="/main" element={<MainPage/>}/>
+                            <Route path="/Main" element={<MainPage/>}/>
                             <Route path="/taskpage" element={<TaskPage/>}/>
                             <Route path="/" element={<LoginPage/>}/>
                             <Route path="/TodayList" element={<ViewDailyTasks/>}/>

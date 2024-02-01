@@ -1,8 +1,6 @@
-import './Button.css'
-import React, {useEffect, useState} from 'react';
-import Lottie, {LottieRefCurrentProps} from 'lottie-react';
-import {FunctionComponent, PropsWithChildren} from "react";
-import animationData from '../../animation/Animation-1701680646366.json';
+import React, {FunctionComponent, PropsWithChildren, useEffect, useState} from "react";
+import Lottie, {LottieRefCurrentProps} from "lottie-react";
+import animationData from '../../animation/DarkModeAnim.json';
 
 type Props = {
     label: string;
@@ -11,8 +9,7 @@ type Props = {
     opened?: boolean;
 } & PropsWithChildren;
 
-const Button: FunctionComponent<Props> = (props: Props) => {
-
+const DarkModeButton: FunctionComponent<Props> = (props: Props) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [initialized, setInitialized] = useState<boolean>(false);
 
@@ -33,15 +30,19 @@ const Button: FunctionComponent<Props> = (props: Props) => {
     };
 
     useEffect(() => {
-        animationRef.current?.goToAndStop(1, true);
+        if (!props.opened) {
+            animationRef.current?.goToAndStop(1, true);
+        }else {
+            animationRef.current?.goToAndStop(68, true);
+        }
         setInitialized(true);
     }, []);
 
     useEffect(() => {
         if (!animationRef.current || !initialized) return;
 
-        const currentFrame = !props.opened ? 69 : 1;
-        let targetFrame = 69;
+        const currentFrame = !props.opened ? 68 : 1;
+        let targetFrame = 72;
 
         if (!props.opened) {
             targetFrame = 1;
@@ -56,12 +57,12 @@ const Button: FunctionComponent<Props> = (props: Props) => {
             if (animationRef.current) {
                 animationRef.current.playSegments([targetFrame, targetFrame + 1], true);
             }
-        }, 450); // Ajustez la durée de transition selon vos besoins, ici 450 Attention à ajuster avec "fr":140 le frame rate  
+        }, 750); // Ajustez la durée de transition selon vos besoins, ici 450 Attention à ajuster avec "fr":140 le frame rate
     }, [props.opened]);
 
     return (
         <>
-            <div className="button">
+            <div className={'darkModeButton'}>
                 <Lottie
                     lottieRef={animationRef}
                     animationData={animationData}
@@ -69,15 +70,11 @@ const Button: FunctionComponent<Props> = (props: Props) => {
                     autoplay={isPlaying}
                     onClick={handleClick}
                     onComplete={handleComplete}
-                    style={{width: 50}}
-
+                    style={{width: 90}}
                 />
-
             </div>
-            <p>{props.isClicked}</p>
         </>
     )
+
 }
-
-
-export default Button;
+export default DarkModeButton

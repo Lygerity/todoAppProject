@@ -8,7 +8,7 @@
 }
 
 .mainContentTask {
-    min-height: 500px;
+    min-height: 100vh;
 }
 
 .mainContentTask .dark-theme h1 {
